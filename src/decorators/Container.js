@@ -96,9 +96,9 @@ export const decorateContainer = function(DecoratedComponent, options = {}) {
         }
     };
 
-    Object.defineProperty(EnvelopedContainer, 'name', {writable: true});
-    EnvelopedContainer.name = `${DecoratedComponent.name}Container`;
-    Object.defineProperty(EnvelopedContainer, 'name', {writable: false});
+    // Object.defineProperty(EnvelopedContainer, 'name', {writable: true});
+    // EnvelopedContainer.name = `${DecoratedComponent.name}Container`;
+    // Object.defineProperty(EnvelopedContainer, 'name', {writable: false});
     EnvelopedContainer.Component = DecoratedComponent;
 
     return EnvelopedContainer;
