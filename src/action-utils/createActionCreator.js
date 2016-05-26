@@ -1,5 +1,5 @@
 export default function createActionCreator(type) {
-    return function(payload) {
+    return function(payload, meta) {
         const action = {type};
 
         if (typeof payload !== 'undefined') {
@@ -8,6 +8,10 @@ export default function createActionCreator(type) {
 
         if (payload instanceof Error) {
             action.error = true;
+        }
+
+        if (typeof meta !== 'undefined') {
+            action.meta = meta;
         }
 
         return action;
